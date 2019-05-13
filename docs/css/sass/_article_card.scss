@@ -1,0 +1,43 @@
+// If this comes up in Turtle, notify me, this is not supposed to be there
+@import "card";
+@import "basics";
+
+.art-card {
+  @extend .shadow;
+  @extend .card;
+  @extend .relative;
+  cursor: pointer;
+
+  & img {
+    transition: 0.3s;
+  }
+
+  & div {
+    @extend .paddings;
+    @extend .absolute;
+    @extend .bottom;
+    @extend .w-100;
+    @extend .fill-red;
+    @extend .opacity-75;
+    @extend .txt-white;
+    transition: 0.3s;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    & * {
+      width: calc(100% - 32px);
+    }
+  }
+
+  &:hover {
+    & img {
+      transform: scale(1.25);
+    }
+
+    & div {
+      opacity: 1;
+    }
+  }
+}
